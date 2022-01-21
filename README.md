@@ -1,2 +1,2 @@
 # HotelBook-
-A full-stack MERN hotel booking app
+A MERN full-stack hotel booking app
