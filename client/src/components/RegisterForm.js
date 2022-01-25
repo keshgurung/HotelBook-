@@ -53,7 +53,12 @@ const RegisterForm = ({
           onChange={(e) => setPasswordConfirmation(e.target.value)}
         ></input>
       </div>
-      <button className='btn btn-primary'>Submit</button>
+      <button
+        disabled={!email || !password || !username || !passwordConfirmation}
+        className='btn btn-primary'
+      >
+        Submit
+      </button>
     </form>
   )
 }

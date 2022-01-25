@@ -4,6 +4,8 @@ import RegisterForm from '../components/RegisterForm'
 import axios from 'axios'
 import Message from '../components/Message'
 import { useHistory } from 'react-router-dom'
+import { register } from '../actions/userActions'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Register = () => {
   const [username, setUsername] = useState('')
@@ -13,23 +15,13 @@ const Register = () => {
   const [message, setMessage] = useState('')
 
   const history = useHistory()
+  const dispatch = useDispatch()
 
-  const handleSumbit = async (e) => {
+  const handleSumbit = (e) => {
     e.preventDefault()
-    try {
-      const response = await axios.post(`http://localhost:4000/api/register`, {
-        username: username,
-        email: email,
-        password: password,
-        passwordConfirmation: passwordConfirmation,
-      })
-      history.push('/login')
-      console.log(response)
-    } catch (err) {
-      setMessage(err.message)
-    }
+    dispatch(register(username, email, password, passwordConfirmation))
+    history.push('/users/login')
   }
-  console.log('err here', message)
   return (
     <>
       <div className='container-fluid p-5 text-center'>

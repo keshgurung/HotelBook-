@@ -1,8 +1,8 @@
-import Home from './booking/Home'
-import Login from './auth/Login'
-import Register from './auth/Register'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Header from './booking/Header'
+import Header from './pages/Header'
 
 function App() {
   return (

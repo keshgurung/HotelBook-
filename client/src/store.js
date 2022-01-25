@@ -5,11 +5,12 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 // create user reducer function
 // - this is initiated in the reducers file - userLoginReducers and imported here....
-import { userLoginReducer } from './reducers/userReducer'
+import { userLoginReducer, userRegisterReducer } from './reducers/userReducer'
 
 // combine multiple reducer ... import from reducers and can add here
 const reducer = combineReducers({
   userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
 })
 
 const initialState = {}
