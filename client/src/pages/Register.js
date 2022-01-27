@@ -3,7 +3,7 @@ import { useState } from 'react'
 import RegisterForm from '../components/RegisterForm'
 import axios from 'axios'
 import Message from '../components/Message'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { register } from '../actions/userActions'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -14,13 +14,13 @@ const Register = () => {
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
   const [message, setMessage] = useState('')
 
-  const history = useHistory()
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const handleSumbit = (e) => {
     e.preventDefault()
     dispatch(register(username, email, password, passwordConfirmation))
-    history.push('/users/login')
+    navigate('/login')
   }
   return (
     <>

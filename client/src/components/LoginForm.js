@@ -2,21 +2,21 @@ import React from 'react'
 
 const LoginForm = ({
   handleSumbit,
-  email,
-  setEmail,
+  username,
+  setUsername,
   password,
   setPassword,
 }) => {
   return (
     <form onSubmit={handleSumbit} className='mt-3'>
       <div className='form-group mb-3'>
-        <label className='form-label'>Your email</label>
+        <label className='form-label'>Your username</label>
         <input
           type='text'
           className='form-control'
-          placeholder='enter email'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          placeholder='enter username'
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         ></input>
       </div>
       <div className='form-group mb-3'>
@@ -29,7 +29,7 @@ const LoginForm = ({
           onChange={(e) => setPassword(e.target.value)}
         ></input>
       </div>
-      <button disabled={!email || !password} className='btn btn-primary'>
+      <button disabled={!username || !password} className='btn btn-primary'>
         Submit
       </button>
     </form>
