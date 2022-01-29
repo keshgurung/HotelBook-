@@ -23,7 +23,7 @@ const Header = () => {
       {userInfo ? (
         <button
           className='nav-link'
-          style={{ border: 0 }}
+          style={{ border: 0, backgroundColor: 'white' }}
           onClick={logoutHandler}
         >
           Logout
