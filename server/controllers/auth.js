@@ -28,6 +28,8 @@ export const loginUser = async (req, res) => {
       message: `Welcome back ${userToLogin.username}`,
       token: token,
       userId: userToLogin._id,
+      createdAt: userToLogin.createdAt,
+      username: userToLogin.username,
     })
   } catch (err) {
     console.log(err)
