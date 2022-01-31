@@ -20,6 +20,12 @@ const Header = () => {
         Home
       </Link>
 
+      {userInfo !== null && (
+        <Link className='nav-link' to='/dashboard'>
+          Dashboard
+        </Link>
+      )}
+
       {userInfo ? (
         <button
           className='nav-link'

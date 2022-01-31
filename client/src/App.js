@@ -12,6 +12,7 @@ import Dashboard from './user/Dashboard'
 import { useSelector } from 'react-redux'
 
 import DashboardSeller from './user/DashboarsSeller'
+import New from './hotels/New'
 
 function App() {
   const { userLogin } = useSelector((state) => ({ ...state }))
@@ -37,6 +38,16 @@ function App() {
           element={
             userLogin.userInfo && userLogin.userInfo.token ? (
               <DashboardSeller />
+            ) : (
+              <Navigate to='/login' />
+            )
+          }
+        />
+        <Route
+          path='/hotels/new'
+          element={
+            userLogin.userInfo && userLogin.userInfo.token ? (
+              <New />
             ) : (
               <Navigate to='/login' />
             )
